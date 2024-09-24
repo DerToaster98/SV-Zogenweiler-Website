@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.color-green-header {
+  background-color: #387b5b;
+}
+
+.color-green-background {
+
+}
+
+.color-green-footer {
+  background-color: #2b4d3e;
+}
+
+.color-gray-background {
+  background-color: #d5e4d9;
+}
+
+.text-white-heading {
+  color: rgb(213, 228, 217)
+}
