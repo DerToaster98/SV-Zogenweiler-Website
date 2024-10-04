@@ -17,7 +17,7 @@
     padding-right: 1rem;
 }
 
-.navbarItem {
+.pageHeader .navbarItem {
     letter-spacing: normal;
     display:inline-block;
     font-size: 2em;
@@ -28,14 +28,14 @@
     border-top: solid 0.125em #387b5b;
 }
 
-nav a:hover {
+.pageHeader nav a:hover {
     transition: 0.5s;
     transform: scale(1.05);
     color: darkgray;
     border-top: solid 0.125em black;
 }
 
-.active {
+.pageHeader .active {
     text-decoration: none;
     font-weight: bolder;
 }
