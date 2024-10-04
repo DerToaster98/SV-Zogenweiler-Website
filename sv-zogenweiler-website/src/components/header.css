@@ -25,11 +25,14 @@
     color: rgb(213, 228, 217);
     text-decoration: none;
     margin: 0;
+    border-top: solid 0.125em #387b5b;
 }
 
 nav a:hover {
     transition: 0.5s;
     transform: scale(1.05);
+    color: darkgray;
+    border-top: solid 0.125em black;
 }
 
 .active {
