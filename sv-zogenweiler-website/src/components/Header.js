@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { HashRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { BrowserView, MobileView} from 'react-device-detect';
 import { Menu} from 'react-burger-menu';
 import Logo from "./Logo";
@@ -9,14 +9,14 @@ import "./header.css";
 export default class Header extends Component {
     render() {
         return (
-            <div className="pageHeader">
+            <header className="pageHeader color-green-header">
                 {/**Logo */}                
                 <div className="logo">
                     <Logo></Logo>
                 </div>
                 <div>
                     <BrowserView>
-                        <nav>                            
+                        <nav className="navbox-right">                            
                             <NavLink className="navbarItem" activeClassname="navbarItem active" to="/">
                                 Startseite
                             </NavLink>                                
@@ -42,7 +42,7 @@ export default class Header extends Component {
                         </nav>
                     </MobileView>
                 </div>
-            </div>
+            </header>
         );
     }
 }

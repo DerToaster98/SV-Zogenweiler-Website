@@ -1,7 +1,38 @@
 .pageHeader {    
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
 .logo {
     width: 20%;    
+}
+
+.navbox-right {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+.navbarItem {
+    letter-spacing: normal;
+    display:inline-block;
+    font-size: 2em;
+    font-weight: normal;
+    color: rgb(213, 228, 217);
+    text-decoration: none;
+    margin: 0;
+}
+
+nav a:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.active {
+    text-decoration: none;
+    font-weight: bolder;
 }
