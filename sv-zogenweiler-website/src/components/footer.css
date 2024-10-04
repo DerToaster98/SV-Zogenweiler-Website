@@ -24,8 +24,8 @@
 }
 
 .pageFooter nav a:hover {
-    transition: 0.5s;
-    transform: scale(1.05);
+    transition: 0.25s;
+    transform: scale(1.025);
     color: darkgray;
 }
 
