@@ -65,6 +65,11 @@ html, body {
   color: rgb(213, 228, 217)
 }
 
+.page-content {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 header {
   text-align: left;
   font-size: 2.5em;
@@ -78,6 +83,12 @@ article {
   text-align: left;
   font-weight: 1;
   font-size: 1.5em;
+}
+
+.text-side-by-side {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 footer {
