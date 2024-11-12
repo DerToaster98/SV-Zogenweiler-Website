@@ -7,6 +7,7 @@ import Logo from "./Logo";
 import "./header.css";
 
 export default class Header extends Component {
+
     render() {
         return (
             <header className="pageHeader color-green-header">
@@ -16,18 +17,32 @@ export default class Header extends Component {
                 </div>
                 <div>
                     <BrowserView>
-                        <nav className="navbox-right">                            
-                            <NavLink className="navbarItem" activeClassname="navbarItem active" to="/">
+                        <nav className="navbox-horizontal navbox-right">                            
+                            <NavLink className="navbar-item" activeClassname="navbar-item active" to="/">
                                 Startseite
                             </NavLink>                                
                             {/**TODO: Das hier ist eine Liste... */}
-                            <NavLink className="navbarItem" activeClassname="navbarItem active" to="/verein">                                    
+                            <NavLink className="navbar-item dropdown-holder" activeClassname="navbar-item active" to="/verein">                                    
                                 Verein
+                                <nav className ="navbox-vertical dropdown-content color-green-background">
+                                    <NavLink className="navbar-item" activeClassname="navbar-item active" to ="/verein/vorstandschaft">
+                                        Vorstandschaft
+                                    </NavLink>
+                                    <NavLink className="navbar-item" activeClassname="navbar-item active" to ="/verein/termine">
+                                        Termine
+                                    </NavLink>
+                                    <NavLink className="navbar-item" activeClassname="navbar-item active" to ="/verein/schuetzenhaus">
+                                        Schützenhaus
+                                    </NavLink>
+                                    <NavLink className="navbar-item" activeClassname="navbar-item active" to ="/verein/aktivitaeten">
+                                        Aktivitäten
+                                    </NavLink>
+                                </nav>
                             </NavLink>
-                            <NavLink className="navbarItem" activeClassname="navbarItem active" to="/ergebnisse">
+                            <NavLink className="navbar-item" activeClassname="navbar-item active" to="/ergebnisse">
                                 Ergebnisse
                             </NavLink>
-                            <NavLink className="navbarItem" activeClassname="navbarItem active" to="/kontakt">
+                            <NavLink className="navbar-item" activeClassname="navbar-item active" to="/kontakt">
                                 Kontakt
                             </NavLink>                            
                         </nav>

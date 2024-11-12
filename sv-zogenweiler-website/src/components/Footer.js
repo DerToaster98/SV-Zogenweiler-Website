@@ -11,7 +11,7 @@ export default class Footer extends Component {
                     <NavLink className="navbarItemFooter" activeClassname="navbarItemFooter active" to="/impressum">
                         Impressum
                     </NavLink>                                
-                    <NavLink className="navbarItemFooter" activeClassname="navbarItem active" to="/datenschutz">                                    
+                    <NavLink className="navbarItemFooter" activeClassname="navbarItemFooter active" to="/datenschutz">                                    
                         Datenschutz
                     </NavLink>                    
                 </nav>
