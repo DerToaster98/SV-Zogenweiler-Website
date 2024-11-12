@@ -10,7 +10,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header className="pageHeader color-green-header">
+            <div className="pageHeader color-green-header">
                 {/**Logo */}                
                 <div className="logo">
                     <Logo></Logo>
@@ -57,7 +57,7 @@ export default class Header extends Component {
                         </nav>
                     </MobileView>
                 </div>
-            </header>
+            </div>
         );
     }
 }
