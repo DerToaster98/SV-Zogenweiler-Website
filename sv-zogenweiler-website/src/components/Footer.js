@@ -5,7 +5,7 @@ import "./footer.css";
 export default class Footer extends Component {
     render() {
         return (
-            <footer className="pageFooter color-green-footer">           
+            <div className="pageFooter color-green-footer">           
                 <nav className="navbox-footer-right">                            
                     <span className="navbarItemFooter">Schützenverein Hubertus Zogenweiler e.V.</span>
                     <NavLink className="navbarItemFooter" activeClassname="navbarItemFooter active" to="/impressum">
@@ -15,7 +15,7 @@ export default class Footer extends Component {
                         Datenschutz
                     </NavLink>                    
                 </nav>
-            </footer>
+            </div>
         );
     }
 }
