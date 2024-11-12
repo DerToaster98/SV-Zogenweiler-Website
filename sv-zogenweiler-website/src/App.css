@@ -89,6 +89,26 @@ article {
   font-size: 1.5em;
 }
 
+span {
+  font-size: 1.125em;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.65em
+}
+
+h3 {
+  font-size: 1.55em;
+}
+
+h4 {
+  font-size: 1.45em;
+}
+
 .text-side-by-side {
   display: flex;
   flex-direction: row;
@@ -100,4 +120,12 @@ footer {
   text-align: left;
   font-weight: 1;
   font-size: 1.0em;
+}
+
+.green-bar-background {
+  background-color: #387b5b;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
 }
