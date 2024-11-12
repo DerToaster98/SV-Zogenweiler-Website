@@ -1,0 +1,10 @@
+.logo-home-text {
+    max-width: 40rem;
+    padding-right: 2rem;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
