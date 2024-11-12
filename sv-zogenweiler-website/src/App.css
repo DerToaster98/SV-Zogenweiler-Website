@@ -61,6 +61,10 @@ html, body {
   background-color: #d5e4d9;
 }
 
+.color-blue-background {
+  background-color: #1b4557;
+}
+
 .text-white-heading {
   color: rgb(213, 228, 217)
 }
