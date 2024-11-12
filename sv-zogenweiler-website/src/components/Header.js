@@ -12,7 +12,7 @@ export default class Header extends Component {
         return (
             <div className="pageHeader color-green-header">
                 {/**Logo */}                
-                <div className="logo">
+                <div className="logo-holder">
                     <Logo></Logo>
                 </div>
                 <div>

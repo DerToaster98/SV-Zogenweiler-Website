@@ -5,12 +5,12 @@
     text-decoration: none;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: left;
 }
 
-.logo img {
-    width: 75%;
-    max-width: 100%;
+.logo {
+    width: 12.5%;
+    max-width: 20%;
 }
 
 h1 {    
