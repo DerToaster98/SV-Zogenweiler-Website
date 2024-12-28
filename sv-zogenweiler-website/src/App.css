@@ -109,6 +109,10 @@ h4 {
   font-size: 1.45em;
 }
 
+h5 {
+  font-size: 1.35em;
+}
+
 .text-side-by-side {
   display: flex;
   flex-direction: row;
@@ -120,6 +124,10 @@ footer {
   text-align: left;
   font-weight: 1;
   font-size: 1.0em;
+}
+
+.text-color-black {
+  color: black;
 }
 
 .green-bar-background {

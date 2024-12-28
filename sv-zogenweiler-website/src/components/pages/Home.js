@@ -6,6 +6,9 @@ import logo from "../../assets/Logo_SV_Zogenweiler.png";
 import './home.css';
 
 export default class Home extends Component {
+    /*
+    TODO: Eventuell das ganze so umstellen, dass im UTC Format angezeigt wird
+    */
     render() {
         return(
             <div className="home">
@@ -19,11 +22,12 @@ export default class Home extends Component {
                                 <img alt="SV-Logo" src={logo} className="logo-home-text"></img>
                             </div>    
                             <div>
-                                <span>123</span>
+                                <h3 className="text-color-black">Willkommen auf unserer Webseite!</h3>
+                                <span>Hier findest Du die wichtigsten Informationen rund um unseren Schützenverein.</span>
                                 <br/>
-                                <span>123</span>
                                 <br/>
-                                <span>123</span>
+                                <span>Kontaktiere uns oder komme an einem unserer Trainingsabende vorbei.</span>
+                                <br/>
                                 <br/>
                             </div>
                         </div>
@@ -34,7 +38,19 @@ export default class Home extends Component {
                         <header>
                             <h2>Trainingszeiten</h2>
                         </header>
-                        <article>
+                        <article>                            
+                            <h3>Jugendtraining</h3>
+                            <dl>
+                                <dt>
+                                    <span>Mittwochs 18:30 - 19:30 Uhr</span>
+                                </dt>
+                            </dl>
+                            <h3>Trainingsabend</h3> 
+                            <dl>
+                                <dt>
+                                    <span>Mittwochs 19:30 - 21:30 Uhr</span>
+                                </dt>
+                            </dl>
                         </article>
                     </div>
                 </div>
