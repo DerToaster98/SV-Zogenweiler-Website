@@ -119,6 +119,10 @@ h5 {
   gap: 1rem;
 }
 
+.fifty-percent-width {
+  width: 50%;
+}
+
 footer {
   padding-top: 1em;
   text-align: left;
@@ -130,10 +134,18 @@ footer {
   color: black;
 }
 
+.text-color-blue {
+  color: #1b4557;
+}
+
 .green-bar-background {
   background-color: #387b5b;
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: white;
+}
+
+.bold-text {
+  font-weight: bold;
 }
