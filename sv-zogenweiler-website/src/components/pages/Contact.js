@@ -108,27 +108,24 @@ export default class Contact extends Component {
                         </div>
                     </article>
                 </div>
-                <div className="green-bar-background">
-                    <div className="page-content">
-                        <header>
-                            <h2>Trainingszeiten</h2>
-                        </header>
-                        <article>                            
-                            <h3>Jugendtraining</h3>
-                            <dl>
-                                <dt>
-                                    <span>Mittwochs 18:30 - 19:30 Uhr</span>
-                                </dt>
-                            </dl>
-                            <h3>Trainingsabend</h3> 
-                            <dl>
-                                <dt>
-                                    <span>Mittwochs 19:30 - 21:30 Uhr</span>
-                                </dt>
-                            </dl>
-                        </article>
-                    </div>
-                </div>
+                {/*TODO: Besser machen, das hier ist Mist*/}
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         );
     }
