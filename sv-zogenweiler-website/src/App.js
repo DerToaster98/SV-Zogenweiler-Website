@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Contact from './components/pages/Contact';
 import Club from './components/pages/club/Club';
 import Chiefs from './components/pages/club/Chiefs';
+import Activities from './components/pages/club/Activities';
 
 function App() {
   return (    
@@ -19,6 +20,7 @@ function App() {
               <Route path='kontakt' element={<Contact></Contact>}/>
               <Route path='verein' element={<Club></Club>}/>
               <Route path='verein/vorstandschaft' element={<Chiefs></Chiefs>}/>
+              <Route path='verein/aktivitaeten' element={<Activities></Activities>}/>
             </Routes>                   
           </div>
           <footer>

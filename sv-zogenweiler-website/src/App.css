@@ -120,6 +120,10 @@ footer {
   color: #1b4557;
 }
 
+.text-color-green {
+  color: rgb(56,123,91);
+}
+
 .green-bar-background {
   background-color: #387b5b;
   width: 100%;
