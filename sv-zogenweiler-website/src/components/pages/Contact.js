@@ -108,24 +108,6 @@ export default class Contact extends Component {
                         </div>
                     </article>
                 </div>
-                {/*TODO: Besser machen, das hier ist Mist*/}
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
             </div>
         );
     }
