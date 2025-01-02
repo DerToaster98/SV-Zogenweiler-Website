@@ -9,7 +9,7 @@ export default class Club extends Component {
             <div className="club">
                 <div className="page-content">
                     <header>
-                        <h1>Verein</h1>
+                        <h1 className="text-color-green">Verein</h1>
                     </header>
                     <article>
                         <span>

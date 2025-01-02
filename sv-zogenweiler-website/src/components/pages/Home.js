@@ -14,7 +14,7 @@ export default class Home extends Component {
             <div className="home">
                 <div className="page-content">
                     <header>
-                        <h1>Startseite</h1>
+                        <h1 className="text-color-green">Startseite</h1>
                     </header>
                     <article>
                         <div className="text-side-by-side">
@@ -22,7 +22,7 @@ export default class Home extends Component {
                                 <img alt="SV-Logo" src={logo} className="logo-home-text"></img>
                             </div>    
                             <div>
-                                <h3 className="text-color-black">Willkommen auf unserer Webseite!</h3>
+                                <h3 className="text-color-green">Willkommen auf unserer Webseite!</h3>
                                 <span>Hier findest Du die wichtigsten Informationen rund um unseren Schützenverein.</span>
                                 <br/>
                                 <br/>

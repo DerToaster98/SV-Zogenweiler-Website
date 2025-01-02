@@ -15,7 +15,7 @@ export default class Contact extends Component {
             <div className="contact">
                 <div className="page-content">
                     <header>
-                        <h1>Kontakt</h1>
+                        <h1 className="text-color-green">Kontakt</h1>
                     </header>
                     <article>
                         <div className="text-side-by-side">                            

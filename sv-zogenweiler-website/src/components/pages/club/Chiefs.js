@@ -9,7 +9,7 @@ export default class Chiefs extends Component {
             <div className="chiefs">
                 <div className="page-content">
                     <header>
-                        <h1>Vorstandschaft</h1>
+                        <h1 className="text-color-green">Vorstandschaft</h1>
                     </header>
                     <article>
                         <span>Unsere Vorstandschaft setzt sich wie folgt zusammen:</span>
