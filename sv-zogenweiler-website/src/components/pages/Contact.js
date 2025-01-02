@@ -12,7 +12,7 @@ export default class Contact extends Component {
             
     render() {
         return(
-            <div className="home">
+            <div className="contact">
                 <div className="page-content">
                     <header>
                         <h1>Kontakt</h1>
