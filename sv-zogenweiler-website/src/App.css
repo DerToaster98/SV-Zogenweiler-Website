@@ -7,6 +7,12 @@ html, body {
   flex: 1;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -100,8 +106,7 @@ h5 {
   width: 50%;
 }
 
-footer {
-  padding-top: 1em;
+footer {  
   text-align: left;
   font-weight: 1;
   font-size: 1.0em;

@@ -10,10 +10,10 @@ import Chiefs from './components/pages/club/Chiefs';
 
 function App() {
   return (    
-      <div id="root" className="App color-gray-background">       
+      <div className="App">       
         <HashRouter basename="/">
           <Header></Header>          
-          <div className='main-content'>
+          <div className='main-content color-gray-background'>
             <Routes>
               <Route path ='/' element={<Home></Home>}/>
               <Route path='kontakt' element={<Contact></Contact>}/>
