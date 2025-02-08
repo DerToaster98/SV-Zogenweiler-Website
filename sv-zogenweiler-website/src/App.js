@@ -8,6 +8,8 @@ import Contact from './components/pages/Contact';
 import Club from './components/pages/club/Club';
 import Chiefs from './components/pages/club/Chiefs';
 import Activities from './components/pages/club/Activities';
+import Imprint from './components/pages/legal/Imprint';
+import Privacy from './components/pages/legal/Privacy';
 
 function App() {
   return (    
@@ -21,6 +23,8 @@ function App() {
               <Route path='verein' element={<Club></Club>}/>
               <Route path='verein/vorstandschaft' element={<Chiefs></Chiefs>}/>
               <Route path='verein/aktivitaeten' element={<Activities></Activities>}/>
+              <Route path='impressum' element={<Imprint></Imprint>}/>
+              <Route path='datenschutz' element={<Privacy></Privacy>}/>
             </Routes>                   
           </div>
           <footer>

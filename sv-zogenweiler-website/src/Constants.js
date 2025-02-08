@@ -46,6 +46,29 @@ export function getClubHouseAddress() {
     );
 }
 
+export function getClubHouseAddressNoContact() {
+    return (
+        <dl>
+            <dt>
+                <span className="bold-text">
+                    Schützenhaus Zogenweiler
+                </span>
+            </dt>
+            <dt>
+                <span>
+                    Görtbild 6
+                </span>
+            </dt>
+            <dt>
+                <span>
+                    88263 Horgenzell   
+                </span>
+            </dt>
+        </dl>       
+    );
+}
+
+/*TODO: Das ganze vereinheitlichen mit Konstanten! So ist unschön...*/
 export function getResponsiblePersonAddress() {
     return (
         <dl>            
@@ -75,6 +98,28 @@ export function getResponsiblePersonAddress() {
                     <a href="mailto:osm@svzogenweiler.de">osm@svzogenweiler.de   </a>
                 </span>
             </dt>
+        </dl>  
+    );
+}
+
+export function getResponsiblePersonAddresNoContact() {
+    return (
+        <dl>            
+            <dt>
+                <span>
+                    Rolf Wiggenhauser   
+                </span>
+            </dt>
+            <dt>
+                <span>
+                    Bettenweiler   
+                </span>
+            </dt>
+            <dt>
+                <span>
+                    88263 Horgenzell   
+                </span>
+            </dt>                        
         </dl>  
     );
 }
