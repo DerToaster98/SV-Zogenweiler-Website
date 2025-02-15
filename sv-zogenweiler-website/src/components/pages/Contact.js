@@ -7,10 +7,11 @@ import './contact.css';
 import { ADDRESS, getClubHouseAddress, getOSMAddress, GOOGLE_MAPS_API_KEY, HOUSE_COORDINATES } from "../../Constants";
 
 import {AdvancedMarker, APIProvider, Map, Pin} from '@vis.gl/react-google-maps';
+import { BrowserView, MobileView } from "react-device-detect";
 
 export default class Contact extends Component {
             
-    render() {
+    render() {        
         return(
             <div className="contact">
                 <div className="page-content">
@@ -18,35 +19,68 @@ export default class Contact extends Component {
                         <h1 className="text-color-green">Kontakt</h1>
                     </header>
                     <article>
-                        <div className="text-side-by-side">                            
-                            <div className="fifty-percent-width">
-                                <h5 className="text-color-blue">Hier kannst du uns finden</h5>                                
-                                {getClubHouseAddress()}              
-                                {
-                                    /* TODO: GoogleMaps Integration
-                                    <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
-                                    <Map id="map"
-                                        defaultZoom={15}
-                                        defaultCenter={
-                                            HOUSE_COORDINATES
-                                        }
-                                    >
-                                        <AdvancedMarker
-                                            key = "Schützenhaus"
-                                            position={HOUSE_COORDINATES}
+                        <BrowserView>
+                            <div className="text-side-by-side">                            
+                                <div className="fifty-percent-width">
+                                    <h5 className="text-color-blue">Hier kannst du uns finden</h5>                                
+                                    {getClubHouseAddress()}              
+                                    {
+                                        /* TODO: GoogleMaps Integration
+                                        <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
+                                        <Map id="map"
+                                            defaultZoom={15}
+                                            defaultCenter={
+                                                HOUSE_COORDINATES
+                                            }
                                         >
-                                            <Pin></Pin>
-                                        </AdvancedMarker>                                            
-                                    </Map>
-                                </APIProvider>       
-                                    */
-                                }
+                                            <AdvancedMarker
+                                                key = "Schützenhaus"
+                                                position={HOUSE_COORDINATES}
+                                            >
+                                                <Pin></Pin>
+                                            </AdvancedMarker>                                            
+                                        </Map>
+                                    </APIProvider>       
+                                        */
+                                    }
+                                </div>
+                                <div className="fifty-percent-width">
+                                    <h5 className="text-color-blue">Adresse unseres Vosrtands</h5>
+                                    {getOSMAddress()}
+                                </div>
                             </div>
-                            <div className="fifty-percent-width">
-                                <h5 className="text-color-blue">Adresse unseres Vosrtands</h5>
-                                {getOSMAddress()}
+                        </BrowserView>                        
+                        <MobileView>
+                            <div className="text-top-and-bottom">                            
+                                <div>
+                                    <h5 className="text-color-blue">Hier kannst du uns finden</h5>                                
+                                    {getClubHouseAddress()}              
+                                    {
+                                        /* TODO: GoogleMaps Integration
+                                        <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
+                                        <Map id="map"
+                                            defaultZoom={15}
+                                            defaultCenter={
+                                                HOUSE_COORDINATES
+                                            }
+                                        >
+                                            <AdvancedMarker
+                                                key = "Schützenhaus"
+                                                position={HOUSE_COORDINATES}
+                                            >
+                                                <Pin></Pin>
+                                            </AdvancedMarker>                                            
+                                        </Map>
+                                    </APIProvider>       
+                                        */
+                                    }
+                                </div>
+                                <div>
+                                    <h5 className="text-color-blue">Adresse unseres Vosrtands</h5>
+                                    {getOSMAddress()}
+                                </div>
                             </div>
-                        </div>
+                        </MobileView>
                     </article>
                 </div>
             </div>

@@ -87,8 +87,8 @@
 
 /*Mobile stuff*/
 #outer-container {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .nav-mobile {
@@ -100,8 +100,8 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: relative;
-    width: 5rem;;
-    height: 5rem;
+    width: 4rem;;
+    height: 4rem;
     left: 0;
     top: 0;
 }

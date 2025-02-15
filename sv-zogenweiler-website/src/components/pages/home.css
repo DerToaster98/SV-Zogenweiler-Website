@@ -3,6 +3,11 @@
     padding-right: 2rem;
 }
 
+.logo-home-text-mobile {
+    max-width: 100%;
+    padding-right: 2rem;
+}
+
 .image-container {
     display: flex;
     align-items: center;

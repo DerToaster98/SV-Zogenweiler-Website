@@ -13,6 +13,10 @@
     max-width: 20%;
 }
 
+.logo-mobile {
+    max-height: 5rem;
+}
+
 h1.text-white-heading {    
     padding-left: 0.5em;
     line-height: 1em;
