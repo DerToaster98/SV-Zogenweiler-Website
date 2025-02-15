@@ -24,6 +24,8 @@
     gap: 1rem;
 }
 
+
+
 .pageHeader .dropdown-content {
     display: none;
     position: absolute;
@@ -67,7 +69,7 @@
     border-top: solid 0.125em black;
 }
 
-.pageHeader .active, .dropdown-content .navbar-item.active {
+.pageHeader .navbar-item .active, .dropdown-content .navbar-item.active {
     text-decoration: none;
     font-weight: normal;
     border-top: solid 0.125em white;
@@ -76,9 +78,142 @@
     transition: transform 0s;
 }
 
-.pageHeader .active > *, .dropdown-content .navbar-item.active > * {
+.pageHeader .navbar-item .active > *, .dropdown-content .navbar-item.active > * {
     text-decoration: none;
     font-weight: normal;
     border-top: solid 0.125em transparent;
     text-shadow: unset;
 }
+
+/*Mobile stuff*/
+#outer-container {
+    width: 5rem;
+    height: 5rem;
+}
+
+.nav-mobile {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: relative;
+    width: 5rem;;
+    height: 5rem;
+    left: 0;
+    top: 0;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: black;
+    border-radius: 2;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+    background: darkgray;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 1rem;
+    width: 1rem;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: #373a47;
+    padding: 1.25em 1.5em 0;
+    font-size: unset;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+    flex: 1;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-item-mobile {
+    font-size: 2rem;
+    font-weight: normal;
+    color: rgb(213, 228, 217);
+    text-decoration: none;
+    margin: 0;
+    border-left: solid 0.125em transparent;
+}
+
+.navbar-item-mobile {
+    flex: 1;
+    text-align: left;
+    letter-spacing: normal;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: normal;    
+    color: rgb(213, 228, 217);
+    text-decoration: none;
+    margin: 0;
+    border-left: solid 0.125em transparent;
+}
+
+.pageHeader .navbar-item-mobile:hover, .nav-mobile .navbar-item-mobile:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+    color: darkgray;
+    border-left: solid 0.125em black;
+}
+
+.navbar-item-mobile.active {
+    text-decoration: none;
+    font-weight: normal;
+    border-left: solid 0.125em white;
+    text-shadow: 0.8px 0 0 currentColor, -0.8px 0 0 currentColor, 0 0.8px 0 currentColor, 0 -0.8px 0 currentColor;
+    transform: scale(1.05);
+    transition: transform 0s;
+}
+
+.navbar-item-mobile .active > *, .nav-mobile .navbar-item-mobile.active > * {
+    text-decoration: none;
+    font-weight: normal;
+    border-top: solid 0.125em transparent;
+    text-shadow: unset;
+}
+
+.nav-mobile .navbar-item-mobile {
+    margin-left: 1.5rem;
+}
+
+
