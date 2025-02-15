@@ -13,8 +13,7 @@ import Privacy from './components/pages/legal/Privacy';
 
 function App() {
   return (    
-      <div className="App">       
-        <HashRouter basename="/">
+      <div className="App">               
           <Header></Header>          
           <div className='main-content color-gray-background'>
             <Routes>
@@ -29,8 +28,7 @@ function App() {
           </div>
           <footer>
             <Footer className='main-footer'></Footer>
-          </footer>
-        </HashRouter>              
+          </footer>        
     </div>
   );
 }
