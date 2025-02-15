@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@vis.gl/react-google-maps": "^1.4.2",
+    "node-events": "0.0.2",
     "react": "^18.3.1",
     "react-burger-menu": "^3.0.9",
     "react-device-detect": "^2.2.3",
