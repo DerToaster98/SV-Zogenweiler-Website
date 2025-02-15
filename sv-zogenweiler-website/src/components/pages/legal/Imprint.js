@@ -29,7 +29,7 @@ export default class Imprint extends Component {
                         <h2>Redaktionell verantwortlich</h2>
                         {getResponsiblePersonAddresNoContact()}
 
-                        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+                        <h2>Verbraucher&shy;streit&shy;beilegung / Universal&shy;schlichtungs&shy;stelle</h2>
                         <p>
                             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                         </p>
