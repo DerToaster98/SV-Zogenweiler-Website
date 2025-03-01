@@ -162,3 +162,18 @@ footer {
   font-weight: bold;
 }
 
+.underline-text {
+  text-decoration: underline;
+}
+
+ol.lower-alpha-list {
+  list-style-type: lower-alpha; 
+}
+
+ol.roman-list {
+  list-style-type: upper-roman;
+}
+
+ol.numeric-list {
+  list-style-type: decimal;
+}

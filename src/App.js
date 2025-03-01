@@ -10,6 +10,7 @@ import Chiefs from './components/pages/club/Chiefs';
 import Activities from './components/pages/club/Activities';
 import Imprint from './components/pages/legal/Imprint';
 import Privacy from './components/pages/legal/Privacy';
+import Statute from './components/pages/club/Statute';
 
 function App() {
   return (    
@@ -22,6 +23,7 @@ function App() {
               <Route path='verein' element={<Club></Club>}/>
               <Route path='verein/vorstandschaft' element={<Chiefs></Chiefs>}/>
               <Route path='verein/aktivitaeten' element={<Activities></Activities>}/>
+              <Route path='verein/satzung' element={<Statute></Statute>}/>
               <Route path='impressum' element={<Imprint></Imprint>}/>
               <Route path='datenschutz' element={<Privacy></Privacy>}/>
             </Routes>                   
