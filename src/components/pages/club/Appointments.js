@@ -51,7 +51,8 @@ export default class Appointments extends Component {
             appointmentData: [],
             appointments: new Map(),
             currentDate: new Date(),
-            weekAppointments: []
+            weekAppointments: [],
+            monthAppointments: []
         }
     }
 
@@ -70,9 +71,11 @@ export default class Appointments extends Component {
         var currentDate = this.state.currentDate;
         
         var weekAppointments = this.findAppointmentsOfWeek(currentDate);
+        var monthAppointments = this.findAppointmentsOfMonth(currentDate);
 
         this.setState({
-            weekAppointments: weekAppointments
+            weekAppointments: weekAppointments,
+            monthAppointments: monthAppointments
         });
     }
 
@@ -172,7 +175,8 @@ export default class Appointments extends Component {
         this.setState(
             {
                 currentDate: nextValue,
-                weekAppointments: this.findAppointmentsOfWeek(nextValue)
+                weekAppointments: this.findAppointmentsOfWeek(nextValue),
+                monthAppointments: this.findAppointmentsOfMonth(nextValue)
             }
         );
     }
@@ -205,7 +209,7 @@ export default class Appointments extends Component {
     }
 
     findAppointmentsOfMonth(selectedDate) {
-        var result = [];        
+        var resultIndexes = new Set();        
 
         var selectedYear = selectedDate.getFullYear();
         var selectedMonth = selectedDate.getMonth() +1;        
@@ -214,15 +218,23 @@ export default class Appointments extends Component {
         if (yearData) {
             var monthData = yearData.get(selectedMonth);
             if (monthData) {
-                // TODO: Iterate over map of the month and extract all                
+                // TODO: Iterate over map of the month and extract all      
+                monthData.forEach(day => {
+                    day.forEach(index => {
+                        resultIndexes.add(index);
+                    });
+                });        
             }
         }
 
+        var result = [];
+        resultIndexes.forEach(index => {
+            result.push(this.state.appointmentData[index]);
+        });
         return result;
     }
 
     findAppointmentsOfWeek(selectedDate) {
-        //TODO: Remove duplicates from list!
         var result = new Set();
         var currentDay = new Date(selectedDate);
         var firstWeekDay = selectedDate.getDate() - selectedDate.getDay();
@@ -287,11 +299,24 @@ export default class Appointments extends Component {
                     </div>
                     <div>
                         <h2>Anstehende Termine des Monats:</h2>
+                        <div>
+                                {
+                                    /*TODO: Einrückung, Abstände, Formatierung */
+                                    Object.keys(this.state.monthAppointments).map((key) => {
+                                        return (
+                                            <div key={key}>
+                                                {this.state.monthAppointments[key]}
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                     </div>
-                    <h1 className="text-color-green">Alle Termine</h1>
+                    {/*<h1 className="text-color-green">Alle Termine</h1>
                     <div>
-
+                        
                     </div>
+                    */}
                 </div>
             </div>
         );
