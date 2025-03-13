@@ -77,12 +77,33 @@ export default class Appointments extends Component {
     }
 
     async initAppointmentData() {
+        //TODO: Add location as separate parameter
+        //2025
         this.addAppointment("Sebastiansoktav Ravensburg", new Date(2025, 0, 26), APPOINTMENT_TYPE.WHOLE_DAY);
-        this.addAppointment("Schützenkreis-Jahreshauptversammlung / Kreisschützentag Berg (SH)", new Date(2025, 0, 24, 18, 29), APPOINTMENT_TYPE.MEETING);
-        this.addAppointment("Kreisschützentag Bodensee in Oberteuringen", new Date(2025, 1, 7, 18, 29), APPOINTMENT_TYPE.MEETING);
+        this.addAppointment("Schützenkreis-Jahreshauptversammlung / Kreisschützentag Berg (SH)", new Date(2025, 0, 24, 19, 30), APPOINTMENT_TYPE.MEETING);
+        this.addAppointment("Kreisschützentag Bodensee in Oberteuringen", new Date(2025, 1, 7, 19, 30), APPOINTMENT_TYPE.MEETING);
         this.addAppointment("Kreismeisterschaft", new Date(2025, 2, 8), new Date(2025, 2, 23), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Generalversammlung", new Date(2025, 2, 28), APPOINTMENT_TYPE.GENERAL_MEETING);
-
+        this.addAppointment("Gemeinde-Vereine-Pokalschießen mit Siegerehrung", new Date(2025, 2, 30), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Ausserordentlicher Kreisschützentag Weissenau", new Date(2025, 3, 11, 18, 0), APPOINTMENT_TYPE.MEETING);
+        this.addAppointment("Siegerehrung Kreismeisterschaft in Vogt", new Date(2025, 3, 25, 19, 30), APPOINTMENT_TYPE.MEETING);
+        this.addAppointment("Glassammlung", new Date(2025, 3, 26), APPOINTMENT_TYPE.WHOLE_DAY);
+        this.addAppointment("Bezirksschützentag Altheim", new Date(2025, 3, 27), APPOINTMENT_TYPE.WHOLE_DAY);
+        this.addAppointment("Kreisdämmerschoppen in Vogt (Rundenwettkampfeinteilung)", new Date(2025, 5, 27, 20, 0), APPOINTMENT_TYPE.UNSPECIFIED);
+        this.addAppointment("Cross-Biathlon beim Schützenhaus Zogenweiler", new Date(2025, 6, 13), APPOINTMENT_TYPE.WHOLE_DAY);
+        this.addAppointment("Feierabendhock mit Jedermann-Schießen", new Date(2025, 8, 19, 18, 0), APPOINTMENT_TYPE.UNSPECIFIED);
+        this.addAppointment("Kreiskönigsschießen und Kreis-Cup in Berg", new Date(2025, 8, 26), new Date(2025, 9, 1), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Königsschießen", new Date(2025, 9, 15, 19, 0), new Date(2025, 9, 15, 22, 0), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Königsschießen", new Date(2025, 9, 19, 10, 0), new Date(2025, 9, 19, 14, 0), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Siegerehrung Kreiskönigsschießen und Kreis-Cup Berg", new Date(2025, 9, 24, 19, 30), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Glassammlung", new Date(2025, 9, 25), APPOINTMENT_TYPE.WHOLE_DAY);
+        this.addAppointment("Dämmerschoppen in Baindt", new Date(2025, 10, 14, 20, 0), APPOINTMENT_TYPE.UNSPECIFIED);
+        this.addAppointment("Weihnachtsfeier", new Date(2025, 11, 21, 19, 0), APPOINTMENT_TYPE.UNSPECIFIED);
+        //2026
+        this.addAppointment("Kreisschützentag in Berg", new Date(2026, 0, 23), APPOINTMENT_TYPE.WHOLE_DAY);
+        this.addAppointment("Generalversammlung", new Date(2026, 2, 20), APPOINTMENT_TYPE.GENERAL_MEETING);
+        this.addAppointment("Gemeinde/Vereine- Pokalschießen mit Siegerehrung", new Date(2026, 2, 22), APPOINTMENT_TYPE.WHOLE_DAY);
     }
 
     addAppointment(content, startDate, type) {
@@ -260,9 +281,10 @@ export default class Appointments extends Component {
                     <div>
                         <h2>Anstehende Termine des Monats:</h2>
                     </div>
-                    <article>
+                    <h1 className="text-color-green">Alle Termine</h1>
+                    <div>
 
-                    </article>                    
+                    </div>
                 </div>
             </div>
         );
