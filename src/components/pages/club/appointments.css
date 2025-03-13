@@ -1,0 +1,6 @@
+.appointment-present {    
+    font-weight: 1000;
+    color: lightgray;
+    background-color: rgb(56,123,91);
+}
+/*TODO: Special color and class for when the entry is selected*/
