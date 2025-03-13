@@ -35,7 +35,6 @@ class AppointmentEntry extends Component {
             </div>
         );
     }
-
 }
 
 function dateToStr(date) {
@@ -49,6 +48,7 @@ export default class Appointments extends Component {
 
         this.state = {
             loading: true,
+            appointmentData: [],
             appointments: new Map(),
             currentDate: new Date(),
             weekAppointments: []
@@ -117,12 +117,15 @@ export default class Appointments extends Component {
         var tmpStartDate = new Date(actualStartDate.getFullYear(), actualStartDate.getMonth(), actualStartDate.getDate(), 0, 0, 0, 0);
         var firstTime = true;
 
+        var index = this.state.appointmentData.length;
+        
         var appointment = <AppointmentEntry
             startDate={actualStartDate}
             endDate={actualEndDate}
             appointmentType={type}
             name={content}
         />
+        this.state.appointmentData.push(appointment);
 
         while((tmpStartDate <= actualEndDate) || (firstTime)) {
             firstTime = false;
@@ -148,7 +151,7 @@ export default class Appointments extends Component {
                 monthData.set(day, dayData);
             }
             dayData.push(
-                appointment
+                index
             );
 
             var newTmpDate = tmpStartDate.setDate(tmpStartDate.getDate() + 1);
@@ -175,7 +178,7 @@ export default class Appointments extends Component {
     }
 
     findAppointments(selectedDate) {
-        var result = [];        
+        const uniqueSet = new Set();
 
         var selectedYear = selectedDate.getFullYear();
         var selectedMonth = selectedDate.getMonth() +1;
@@ -188,12 +191,16 @@ export default class Appointments extends Component {
                 var dayData = monthData.get(selectedDay);
                 if (dayData) {
                     for (const tmp of dayData) {
-                        result.push(tmp);
+                        uniqueSet.add(tmp);
                     }
                 }
             }
         }
 
+        var result = [];
+        uniqueSet.forEach(index => {
+            result.push(this.state.appointmentData[index]);
+        });
         return result;
     }
 
@@ -216,7 +223,7 @@ export default class Appointments extends Component {
 
     findAppointmentsOfWeek(selectedDate) {
         //TODO: Remove duplicates from list!
-        var result = [];
+        var result = new Set();
         var currentDay = new Date(selectedDate);
         var firstWeekDay = selectedDate.getDate() - selectedDate.getDay();
         var lastWeekDay = firstWeekDay + 6;
@@ -227,14 +234,14 @@ export default class Appointments extends Component {
         var tmpDay = new Date(firstWeekDay);
         while(tmpDay <= lastWeekDay) {                        
             for (const obj of this.findAppointments(tmpDay)) {            
-                result.push(obj);                
+                result.add(obj);                
             }
             
             var newTmpDate = tmpDay.setDate(tmpDay.getDate() + 1);
             tmpDay = new Date(newTmpDate);            
         }        
 
-        return result;        
+        return Array.from(result);        
     }
 
     render() {
@@ -267,13 +274,13 @@ export default class Appointments extends Component {
                             <h2>Anstehende Termine der Woche:</h2>
                             <div>
                                 {
-                                    /*Object.keys(this.state.weekAppointments).map((key) => {
+                                    Object.keys(this.state.weekAppointments).map((key) => {
                                         return (
                                             <div key={key}>
                                                 {this.state.weekAppointments[key]}
                                             </div>
                                         )
-                                    })*/
+                                    })
                                 }
                             </div>
                         </div>
