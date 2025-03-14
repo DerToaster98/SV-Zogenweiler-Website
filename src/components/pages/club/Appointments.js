@@ -237,9 +237,9 @@ export default class Appointments extends Component {
     findAppointmentsOfWeek(selectedDate) {
         var result = new Set();
         var currentDay = new Date(selectedDate);
-        // Returns the sunday of the week (date - day)
-        // TODO: Adjust so it returns monday
-        var firstWeekDay = selectedDate.getDate() - selectedDate.getDay();
+        
+        // Get first day of the week and begin with monday
+        var firstWeekDay = selectedDate.getDate() - ((selectedDate.getDay() + 6) % 7);
         var lastWeekDay = firstWeekDay + 6;
 
         firstWeekDay = new Date(currentDay.setDate(firstWeekDay));
