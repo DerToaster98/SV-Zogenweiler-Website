@@ -25,12 +25,27 @@ class AppointmentEntry extends Component {
         if (isMultiDayDuration) {
             dateLine = this.props.startDate.toLocaleDateString() + ' - ' + this.props.endDate.toLocaleDateString();
         }
+        var timeBlock = <span>Ganztägig</span>;
+        if ((this.props.startDate.getHours() + this.props.startDate.getMinutes() + this.props.endDate.getHours() + this.props.endDate.getMinutes()) > 0) {
+            if (this.props.startDate < this.props.endDate) {
+                timeBlock = <span>{this.props.startDate.getHours() + ':' + this.props.startDate.getMinutes()} - {this.props.endDate.getHours() + ':' + this.props.endDate.getMinutes()} Uhr</span>;
+            } else {
+                timeBlock = <span>{this.props.startDate.getHours() + ':' + this.props.startDate.getMinutes()} Uhr </span>;
+            }
+        }
+        
         /*TODO: Infos einblenden je nach Typ*/
         return (
-            <div className="appointment">
+            <div className="appointment-entry">
                 <article>
                     <h3>{this.props.name}</h3>
-                    <div>{dateLine}</div>                    
+                    <div>
+                        <span>Datum: {dateLine}</span>
+                        <br></br>
+                        {
+                            timeBlock
+                        }
+                    </div>
                 </article>
             </div>
         );
@@ -48,7 +63,6 @@ export default class Appointments extends Component {
 
         this.state = {
             loading: true,
-            appointmentData: [],
             appointments: new Map(),
             currentDate: new Date(),
             weekAppointments: [],
@@ -114,13 +128,11 @@ export default class Appointments extends Component {
     }   
 
     addAppointment(content, startDate, endDate, type) {
-        const actualStartDate = new Date(startDate);
+        const actualStartDate = new Date(startDate);        
         const actualEndDate = new Date(endDate);
 
         var tmpStartDate = new Date(actualStartDate.getFullYear(), actualStartDate.getMonth(), actualStartDate.getDate(), 0, 0, 0, 0);
-        var firstTime = true;
-
-        var index = this.state.appointmentData.length;
+        var firstTime = true;        
         
         var appointment = <AppointmentEntry
             startDate={actualStartDate}
@@ -128,7 +140,6 @@ export default class Appointments extends Component {
             appointmentType={type}
             name={content}
         />
-        this.state.appointmentData.push(appointment);
 
         while((tmpStartDate <= actualEndDate) || (firstTime)) {
             firstTime = false;
@@ -154,7 +165,7 @@ export default class Appointments extends Component {
                 monthData.set(day, dayData);
             }
             dayData.push(
-                index
+                appointment
             );
 
             var newTmpDate = tmpStartDate.setDate(tmpStartDate.getDate() + 1);
@@ -164,7 +175,7 @@ export default class Appointments extends Component {
 
     tileClassName = ({date, view}) => {
         if (view === 'month') {
-            let appointments = this.findAppointments(date);
+            var appointments = this.findAppointments(date);
             if (appointments.length > 0) {
                 return CLASSNAME_APPOINTMENT_FOUND;
             }
@@ -201,15 +212,11 @@ export default class Appointments extends Component {
             }
         }
 
-        var result = [];
-        uniqueSet.forEach(index => {
-            result.push(this.state.appointmentData[index]);
-        });
-        return result;
+        return Array.from(uniqueSet);
     }
 
     findAppointmentsOfMonth(selectedDate) {
-        var resultIndexes = new Set();        
+        var resultSet = new Set();        
 
         var selectedYear = selectedDate.getFullYear();
         var selectedMonth = selectedDate.getMonth() +1;        
@@ -221,17 +228,13 @@ export default class Appointments extends Component {
                 // TODO: Iterate over map of the month and extract all      
                 monthData.forEach(day => {
                     day.forEach(index => {
-                        resultIndexes.add(index);
+                        resultSet.add(index);
                     });
                 });        
             }
         }
 
-        var result = [];
-        resultIndexes.forEach(index => {
-            result.push(this.state.appointmentData[index]);
-        });
-        return result;
+        return Array.from(resultSet);
     }
 
     findAppointmentsOfWeek(selectedDate) {
@@ -285,32 +288,36 @@ export default class Appointments extends Component {
                         <div>
                             <h2>Anstehende Termine der Woche:</h2>
                             <div>
-                                {
-                                    Object.keys(this.state.weekAppointments).map((key) => {
-                                        return (
-                                            <div key={key}>
-                                                {this.state.weekAppointments[key]}
-                                            </div>
-                                        )
-                                    })
-                                }
+                                <dl>
+                                    {
+                                        Object.keys(this.state.weekAppointments).map((key) => {
+                                            return (
+                                                <dd key={key}>
+                                                    {this.state.weekAppointments[key]}
+                                                </dd>
+                                            )
+                                        })
+                                    }
+                                </dl>
                             </div>
                         </div>
                     </div>
                     <div>
                         <h2>Anstehende Termine des Monats:</h2>
                         <div>
+                            <dl>
                                 {
                                     /*TODO: Einrückung, Abstände, Formatierung */
                                     Object.keys(this.state.monthAppointments).map((key) => {
                                         return (
-                                            <div key={key}>
+                                            <dd key={key}>
                                                 {this.state.monthAppointments[key]}
-                                            </div>
+                                            </dd>
                                         )
                                     })
                                 }
-                            </div>
+                            </dl>
+                        </div>
                     </div>
                     {/*<h1 className="text-color-green">Alle Termine</h1>
                     <div>
