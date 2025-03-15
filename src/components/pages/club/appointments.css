@@ -1,6 +1,59 @@
+.react-calendar button.react-calendar__tile {
+    border: solid 5px transparent;
+}
+
 .appointment-present {    
     font-weight: 1000;
+    color: lightgray;;
+    background-color: rgb(56,123,91);
+}
+
+.react-calendar button.react-calendar__tile--now {
+    color: unset;
+    background-color: transparent;
+    border: solid 5px #ffff76;
+}
+
+.react-calendar button.react-calendar__tile--active {
+    color: unset;
+    background: transparent;
+    border: solid 5px #006edc;
+}
+
+.react-calendar button.react-calendar__tile--active:enabled {
+    color: unset;
+    background: transparent;
+    border: solid 5px #006edc;
+}
+
+.react-calendar button.react-calendar__tile--now.appointment-present {
     color: lightgray;
     background-color: rgb(56,123,91);
+}
+
+.react-calendar button.react-calendar__tile--active.appointment-present {
+    color: lightgray;
+    background: rgb(56,123,91);
+}
+
+.react-calendar button.react-calendar__tile--active:enabled.appointment-present {
+    color: lightgray;
+    background: rgb(56,123,91);
+}
+
+.appointment-entry {    
+    margin-bottom: 1rem;
+}
+
+.appointment-entry h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.appointment-entry article {
+    padding-top: 0;
+    padding-left: 0.25rem;
+    border-left: solid 1rem rgb(56,123,91);
+    background-color: #aacab333;
 }
 /*TODO: Special color and class for when the entry is selected*/
