@@ -17,6 +17,25 @@ const APPOINTMENT_TYPE = {
 
 const CLASSNAME_APPOINTMENT_FOUND = 'appointment-present';
 
+class TimeBlock extends Component {
+    
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        var timeBlock = <span>Ganztägig</span>;
+        if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes() + this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
+            if (this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
+                timeBlock = <span>{this.props.appointment.props.startDate.getHours() + ':' + this.props.appointment.props.startDate.getMinutes()} - {this.props.appointment.props.endDate.getHours() + ':' + this.props.appointment.props.endDate.getMinutes()} Uhr</span>;
+            } else {
+                timeBlock = <span>{this.props.appointment.props.startDate.getHours() + ':' + this.props.appointment.props.startDate.getMinutes()} Uhr </span>;
+            }
+        }
+        return timeBlock;
+    }
+}
+
 class AppointmentEntry extends Component {
 
     render() {
@@ -24,15 +43,7 @@ class AppointmentEntry extends Component {
         var dateLine = this.props.startDate.toLocaleDateString();
         if (isMultiDayDuration) {
             dateLine = this.props.startDate.toLocaleDateString() + ' - ' + this.props.endDate.toLocaleDateString();
-        }
-        var timeBlock = <span>Ganztägig</span>;
-        if ((this.props.startDate.getHours() + this.props.startDate.getMinutes() + this.props.endDate.getHours() + this.props.endDate.getMinutes()) > 0) {
-            if (this.props.startDate < this.props.endDate) {
-                timeBlock = <span>{this.props.startDate.getHours() + ':' + this.props.startDate.getMinutes()} - {this.props.endDate.getHours() + ':' + this.props.endDate.getMinutes()} Uhr</span>;
-            } else {
-                timeBlock = <span>{this.props.startDate.getHours() + ':' + this.props.startDate.getMinutes()} Uhr </span>;
-            }
-        }
+        }        
         
         /*TODO: Infos einblenden je nach Typ*/
         return (
@@ -42,14 +53,12 @@ class AppointmentEntry extends Component {
                     <div>
                         <span>Datum: {dateLine}</span>
                         <br></br>
-                        {
-                            timeBlock
-                        }
+                        <TimeBlock appointment={this}/>
                     </div>
                 </article>
             </div>
         );
-    }
+    }    
 }
 
 function dateToStr(date) {
@@ -261,6 +270,77 @@ export default class Appointments extends Component {
         return Array.from(result);        
     }
 
+    generateAllAppointmentsList() {
+        var yearObjects = [];
+
+        for (var [year, months] of this.state.appointments) {
+            var monthsOfYear = [];
+            for (var [month, days] of months) {
+                var daysOfMonth = [];
+                for (var [day, appointments] of days) {
+                    var dayDate = new Date(year, month - 1, day);
+                    var dayObject = <div>
+                        <h4>{dayDate.toLocaleDateString()}</h4>
+                        <dl>
+                            {
+                                Object.keys(appointments).map((key) => {
+                                    var timeBlock = <TimeBlock appointment={appointments[key]}></TimeBlock>
+                                    return (
+                                        <dd key={key}>
+                                            <div>
+                                                <span>{appointments[key].props.name + ';'} {timeBlock}</span>
+                                            </div>
+                                        </dd>
+                                    )
+                                })
+                            }
+                        </dl>
+                    </div>;
+                    daysOfMonth.push(dayObject);
+                }
+                var monthObject = <div>                    
+                    <h3>{(new Date(year, month - 1, 1)).toLocaleString('default', {month: 'long'})}</h3>
+                    <dl>
+                        {
+                            Object.keys(daysOfMonth).map((key) => {
+                                return (
+                                    <dd key={key}>
+                                        {daysOfMonth[key]}
+                                    </dd>
+                                )
+                            })
+                        }
+                    </dl>
+                </div>;
+                monthsOfYear.push(monthObject);
+            }
+
+            var yearObject = <div>
+                <h2>{year}</h2>
+                <dl>
+                    {
+                        Object.keys(monthsOfYear).map((key) => {
+                            return (
+                                <dd key={key}>
+                                    {monthsOfYear[key]}
+                                </dd>
+                            )
+                        })
+                    }
+                </dl>
+            </div>;
+            yearObjects.push(yearObject);
+        }
+
+        return Object.keys(yearObjects).map((key) => {
+            return (
+                <dd key={key}>
+                    {yearObjects[key]}
+                </dd>
+            )
+        });
+    }
+
     render() {
         if(this.state.loading) {
             return(
@@ -321,11 +401,14 @@ export default class Appointments extends Component {
                             </dl>
                         </div>
                     </div>
-                    {/*<h1 className="text-color-green">Alle Termine</h1>
+                    <h1 className="text-color-green">Alle Termine</h1>
                     <div>
-                        
-                    </div>
-                    */}
+                        <dl>
+                            {
+                                this.generateAllAppointmentsList()
+                            }
+                        </dl>
+                    </div>                    
                 </div>
             </div>
         );
