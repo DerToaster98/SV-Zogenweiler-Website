@@ -53,8 +53,7 @@ export default class Home extends Component {
                 </div>
                 <div className="green-bar-background">
                     <div className="page-content">
-                        <article>                            
-                            /*TODO: Tag und Datum in der Uhrzeit des Betrachters anzeigen! */
+                        <article>
                             <h2>Trainingszeiten</h2>
                             <div className="indent-left">
                                 <h3>Jugendtraining</h3>
