@@ -81,6 +81,7 @@ export default class Appointments extends Component {
             loading: true,
             appointments: new Map(),
             currentDate: new Date(),
+            dayAppointments: [],
             weekAppointments: [],
             monthAppointments: []
         }
@@ -100,10 +101,12 @@ export default class Appointments extends Component {
     refresh() {
         var currentDate = this.state.currentDate;
         
+        var dayAppointments = this.findAppointments(currentDate);
         var weekAppointments = this.findAppointmentsOfWeek(currentDate);
         var monthAppointments = this.findAppointmentsOfMonth(currentDate);
 
         this.setState({
+            dayAppointments: dayAppointments,
             weekAppointments: weekAppointments,
             monthAppointments: monthAppointments
         });
@@ -202,6 +205,7 @@ export default class Appointments extends Component {
         this.setState(
             {
                 currentDate: nextValue,
+                dayAppointments: this.findAppointments(nextValue),
                 weekAppointments: this.findAppointmentsOfWeek(nextValue),
                 monthAppointments: this.findAppointmentsOfMonth(nextValue)
             }
@@ -321,9 +325,9 @@ export default class Appointments extends Component {
 
         return Object.keys(yearObjects).map((key) => {
             return (
-                <dd key={key}>
+                <dt key={key}>
                     {yearObjects[key]}
-                </dd>
+                </dt>
             )
         });
     }
@@ -346,14 +350,30 @@ export default class Appointments extends Component {
                         <h1 className="text-color-green">Termine</h1>
                     </header>
                     <div className="appointment-calendar">
-                        <Calendar
-                            minDate={new Date((new Date()).getFullYear() - 1, 0, 1)}
-                            maxDate={new Date((new Date()).getFullYear() + 1, 11, 31)}
-                            value={this.state.currentDate}                        
-                            minDetail="year"
-                            onChange={this.onChange}
-                            tileClassName={this.tileClassName}
-                        />
+                        <div className="content-side-by-side-dynamic">
+                            <Calendar
+                                minDate={new Date((new Date()).getFullYear() - 1, 0, 1)}
+                                maxDate={new Date((new Date()).getFullYear() + 1, 11, 31)}
+                                value={this.state.currentDate}                        
+                                minDetail="year"
+                                onChange={this.onChange}
+                                tileClassName={this.tileClassName}
+                            />
+                            <div className="appointments-today">
+                                <h2>Heute:</h2>
+                                <dl>
+                                    {
+                                        Object.keys(this.state.dayAppointments).map((key) => {
+                                            return (
+                                                <dt key={key}>
+                                                    {this.state.dayAppointments[key]}
+                                                </dt>
+                                            )
+                                        })
+                                    }
+                                </dl>
+                            </div>
+                        </div>
                         <div>
                             <h2>Anstehende Termine der Woche:</h2>
                             <div>
@@ -361,9 +381,9 @@ export default class Appointments extends Component {
                                     {
                                         Object.keys(this.state.weekAppointments).map((key) => {
                                             return (
-                                                <dd key={key}>
+                                                <dt key={key}>
                                                     {this.state.weekAppointments[key]}
-                                                </dd>
+                                                </dt>
                                             )
                                         })
                                     }
@@ -379,9 +399,9 @@ export default class Appointments extends Component {
                                     /*TODO: Einrückung, Abstände, Formatierung */
                                     Object.keys(this.state.monthAppointments).map((key) => {
                                         return (
-                                            <dd key={key}>
+                                            <dt key={key}>
                                                 {this.state.monthAppointments[key]}
-                                            </dd>
+                                            </dt>
                                         )
                                     })
                                 }

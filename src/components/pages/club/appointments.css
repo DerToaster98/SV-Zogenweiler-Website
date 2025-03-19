@@ -1,5 +1,10 @@
+/*Calendar properties*/
 .react-calendar button.react-calendar__tile {
     border: solid 5px transparent;
+}
+
+.react-calendar {
+    min-width: 380px;
 }
 
 .appointment-present {    
@@ -39,6 +44,16 @@
 .react-calendar button.react-calendar__tile--active:enabled.appointment-present {
     color: lightgray;
     background: rgb(56,123,91);
+}
+
+.appointments-today h2 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+div.appointments-today  {    
+    margin-left: 1rem;
+    flex-grow: 1;
 }
 
 .appointment-entry {    
