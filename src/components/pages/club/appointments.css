@@ -51,8 +51,7 @@
     margin-bottom: 0.25rem;
 }
 
-div.appointments-today  {    
-    margin-left: 1rem;
+div.appointments-today  {        
     flex-grow: 1;
 }
 
