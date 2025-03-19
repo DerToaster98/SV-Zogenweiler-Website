@@ -36,22 +36,29 @@ class TimeBlock extends Component {
     }
 }
 
-class AppointmentEntry extends Component {
-
+class DateDisplay extends Component {
+    
     render() {
         var isMultiDayDuration = this.props.startDate < this.props.endDate;
         var dateLine = this.props.startDate.toLocaleDateString();
         if (isMultiDayDuration) {
             dateLine = this.props.startDate.toLocaleDateString() + ' - ' + this.props.endDate.toLocaleDateString();
         }        
-        
+        return dateLine;
+    }
+
+}
+
+class AppointmentEntry extends Component {
+
+    render() {                
         /*TODO: Infos einblenden je nach Typ*/
         return (
             <div className="appointment-entry">
                 <article>
                     <h3>{this.props.name}</h3>
                     <div>
-                        <span>Datum: {dateLine}</span>
+                        <span>Datum: <DateDisplay startDate={this.props.startDate} endDate={this.props.endDate}/></span>
                         <br></br>
                         <TimeBlock appointment={this}/>
                     </div>
@@ -275,38 +282,18 @@ export default class Appointments extends Component {
 
         for (var [year, months] of this.state.appointments) {
             var monthsOfYear = [];
-            for (var [month, days] of months) {
-                var daysOfMonth = [];
-                for (var [day, appointments] of days) {
-                    var dayDate = new Date(year, month - 1, day);
-                    var dayObject = <div>
-                        <h4>{dayDate.toLocaleDateString()}</h4>
-                        <dl>
-                            {
-                                Object.keys(appointments).map((key) => {
-                                    var timeBlock = <TimeBlock appointment={appointments[key]}></TimeBlock>
-                                    return (
-                                        <dd key={key}>
-                                            <div>
-                                                <span>{appointments[key].props.name + ';'} {timeBlock}</span>
-                                            </div>
-                                        </dd>
-                                    )
-                                })
-                            }
-                        </dl>
-                    </div>;
-                    daysOfMonth.push(dayObject);
-                }
+            for (var [month, days] of months) {                
+                var appointmentsOfMonth = this.findAppointmentsOfMonth(new Date(year, month, 0));
+                
                 var monthObject = <div>                    
                     <h3>{(new Date(year, month - 1, 1)).toLocaleString('default', {month: 'long'})}</h3>
                     <dl>
                         {
-                            Object.keys(daysOfMonth).map((key) => {
+                            Object.keys(appointmentsOfMonth).map((key) => {
                                 return (
-                                    <dd key={key}>
-                                        {daysOfMonth[key]}
-                                    </dd>
+                                    <dt key={key}>
+                                        {appointmentsOfMonth[key]}
+                                    </dt>
                                 )
                             })
                         }
@@ -321,9 +308,9 @@ export default class Appointments extends Component {
                     {
                         Object.keys(monthsOfYear).map((key) => {
                             return (
-                                <dd key={key}>
+                                <dt key={key}>
                                     {monthsOfYear[key]}
-                                </dd>
+                                </dt>
                             )
                         })
                     }
