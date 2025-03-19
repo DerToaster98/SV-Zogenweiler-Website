@@ -257,16 +257,36 @@ export default class Appointments extends Component {
         return Array.from(resultSet);
     }
 
-    findAppointmentsOfWeek(selectedDate) {
-        var result = new Set();
-        var currentDay = new Date(selectedDate);
-        
-        // Get first day of the week and begin with monday
-        var firstWeekDay = selectedDate.getDate() - ((selectedDate.getDay() + 6) % 7);
+    getLastDayOfWeek(date) {
+        var currentDate = new Date(date);
+
+        var firstWeekDay = currentDate.getDate() - ((currentDate.getDay() + 6) % 7);
         var lastWeekDay = firstWeekDay + 6;
 
-        firstWeekDay = new Date(currentDay.setDate(firstWeekDay));
-        lastWeekDay = new Date(currentDay.setDate(lastWeekDay));
+        return new Date(currentDate.setDate(lastWeekDay));
+    }
+
+    getFirstDayOfWeek(date) {
+        var currentDate = new Date(date);
+
+        var firstWeekDay = currentDate.getDate() - ((currentDate.getDay() + 6) % 7);
+
+        return new Date(currentDate.setDate(firstWeekDay));
+    }
+
+    isDateInCurrentWeek(date) {
+        var currentDate = new Date();
+
+        var firstWeekDay = this.getFirstDayOfWeek(date);
+        var lastWeekDay = this.getLastDayOfWeek(date);
+
+        return firstWeekDay <= currentDate && lastWeekDay >= currentDate;
+    }
+
+    findAppointmentsOfWeek(selectedDate) {
+        var result = new Set();
+        var firstWeekDay = this.getFirstDayOfWeek(selectedDate);
+        var lastWeekDay = this.getLastDayOfWeek(selectedDate);
 
         var tmpDay = new Date(firstWeekDay);
         while(tmpDay <= lastWeekDay) {                        
@@ -343,6 +363,34 @@ export default class Appointments extends Component {
             );
         }
 
+        var dayString;
+        var monthString;
+        var weekString;
+        var actualCurrentDate = new Date();
+        var sameYear = actualCurrentDate.getFullYear() == this.state.currentDate.getFullYear();
+        var sameMonth = actualCurrentDate.getMonth() == this.state.currentDate.getMonth();
+        var sameDay = actualCurrentDate.getDate() == this.state.currentDate.getDate()
+        if (sameYear && sameMonth && sameDay) {
+            dayString = 'Heute';
+        } else {
+            dayString = 'Termine am ' + dateToStr(this.state.currentDate);
+        }
+        
+        if (sameYear && sameMonth) {
+            monthString = 'des Monats';
+        } else {
+            monthString = 'im ' + (new Date(actualCurrentDate.getFullYear(), actualCurrentDate.getMonth(), 1)).toLocaleString('default', {month: 'long'});
+        }
+
+        if (this.isDateInCurrentWeek(this.state.currentDate)) {
+            weekString = '';
+        } else {
+            var firstWeekDay = this.getFirstDayOfWeek(this.state.currentDate);
+            var lastWeekDay = this.getLastDayOfWeek(this.state.currentDate);
+
+            weekString = ' (' + dateToStr(firstWeekDay) + ' - ' + dateToStr(lastWeekDay) + ')';
+        }
+
         return (
             <div className="appointments">
                 <div className="page-content">
@@ -360,7 +408,7 @@ export default class Appointments extends Component {
                                 tileClassName={this.tileClassName}
                             />
                             <div className="appointments-today">
-                                <h2>Heute:</h2>
+                                <h2>{dayString}:</h2>
                                 <dl>
                                     {
                                         Object.keys(this.state.dayAppointments).map((key) => {
@@ -375,7 +423,7 @@ export default class Appointments extends Component {
                             </div>
                         </div>
                         <div>
-                            <h2>Anstehende Termine der Woche:</h2>
+                            <h2>Anstehende Termine der Woche{weekString}:</h2>
                             <div>
                                 <dl>
                                     {
@@ -392,7 +440,7 @@ export default class Appointments extends Component {
                         </div>
                     </div>
                     <div>
-                        <h2>Anstehende Termine des Monats:</h2>
+                        <h2>Anstehende Termine {monthString}:</h2>
                         <div>
                             <dl>
                                 {
