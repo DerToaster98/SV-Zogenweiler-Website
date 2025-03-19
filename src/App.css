@@ -128,12 +128,6 @@ h5 {
     gap: 1rem;  
 }
 
-.content-side-by-side-dynamic {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
 @media(width > 640px) {
   .content-side-by-side-dynamic {
     display: flex;
