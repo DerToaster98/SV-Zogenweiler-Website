@@ -23,13 +23,16 @@ class TimeBlock extends Component {
         super(props);
     }
 
+    padLeft(value, amount, character) {
+        return String(value).padStart(amount, character);
+    }
     render() {
         var timeBlock = <span>Ganztägig</span>;
         if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes() + this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
             if (this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
-                timeBlock = <span>{this.props.appointment.props.startDate.getHours() + ':' + this.props.appointment.props.startDate.getMinutes()} - {this.props.appointment.props.endDate.getHours() + ':' + this.props.appointment.props.endDate.getMinutes()} Uhr</span>;
+                timeBlock = <span>{padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} - {padLeft(this.props.appointment.props.endDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.endDate.getMinutes(), 2, '0')} Uhr</span>;
             } else {
-                timeBlock = <span>{this.props.appointment.props.startDate.getHours() + ':' + this.props.appointment.props.startDate.getMinutes()} Uhr </span>;
+                timeBlock = <span>{padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} Uhr </span>;
             }
         }
         return timeBlock;
@@ -39,7 +42,9 @@ class TimeBlock extends Component {
 class DateDisplay extends Component {
     
     render() {
-        var isMultiDayDuration = this.props.startDate < this.props.endDate;
+        var startDate = new Date(this.props.startDate.getFullYear(), this.props.startDate.getMonth(), this.props.startDate.getDate(), 0, 0, 0);
+        var endDate = new Date(this.props.endDate.getFullYear(), this.props.endDate.getMonth(), this.props.endDate.getDate(), 0, 0, 0);
+        var isMultiDayDuration = startDate < endDate;
         var dateLine = this.props.startDate.toLocaleDateString();
         if (isMultiDayDuration) {
             dateLine = this.props.startDate.toLocaleDateString() + ' - ' + this.props.endDate.toLocaleDateString();
