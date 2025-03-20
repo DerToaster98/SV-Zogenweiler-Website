@@ -30,9 +30,9 @@ class TimeBlock extends Component {
         var timeBlock = <span>Ganztägig</span>;
         if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes() + this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
             if (this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
-                timeBlock = <span>{padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} - {padLeft(this.props.appointment.props.endDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.endDate.getMinutes(), 2, '0')} Uhr</span>;
+                timeBlock = <span>{this.padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} - {this.padLeft(this.props.appointment.props.endDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.endDate.getMinutes(), 2, '0')} Uhr</span>;
             } else {
-                timeBlock = <span>{padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} Uhr </span>;
+                timeBlock = <span>{this.padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} Uhr </span>;
             }
         }
         return timeBlock;
