@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SV-Zogenweiler-Website/static/css/main.0d1cc802.css",
-    "main.js": "/SV-Zogenweiler-Website/static/js/main.237430d9.js",
+    "main.js": "/SV-Zogenweiler-Website/static/js/main.16693041.js",
     "static/js/453.74ffe406.chunk.js": "/SV-Zogenweiler-Website/static/js/453.74ffe406.chunk.js",
     "static/media/Logo_SV_Zogenweiler.png": "/SV-Zogenweiler-Website/static/media/Logo_SV_Zogenweiler.9c06517e89677ce4555f.png",
     "static/media/logo.svg": "/SV-Zogenweiler-Website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/SV-Zogenweiler-Website/index.html",
     "main.0d1cc802.css.map": "/SV-Zogenweiler-Website/static/css/main.0d1cc802.css.map",
-    "main.237430d9.js.map": "/SV-Zogenweiler-Website/static/js/main.237430d9.js.map",
+    "main.16693041.js.map": "/SV-Zogenweiler-Website/static/js/main.16693041.js.map",
     "453.74ffe406.chunk.js.map": "/SV-Zogenweiler-Website/static/js/453.74ffe406.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d1cc802.css",
-    "static/js/main.237430d9.js"
+    "static/js/main.16693041.js"
   ]
 }
