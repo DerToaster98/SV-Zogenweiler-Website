@@ -12,6 +12,7 @@ import Imprint from './components/pages/legal/Imprint';
 import Privacy from './components/pages/legal/Privacy';
 import Statute from './components/pages/club/Statute';
 import Appointments from './components/pages/club/Appointments';
+import ResultsPDF from './components/pages/ResultsPDF';
 
 function App() {
   return (    
@@ -28,6 +29,7 @@ function App() {
               <Route path ='verein/termine' element={<Appointments></Appointments>}/>
               <Route path='impressum' element={<Imprint></Imprint>}/>
               <Route path='datenschutz' element={<Privacy></Privacy>}/>
+              <Route path='ergebnisse' element={<ResultsPDF></ResultsPDF>}/>
             </Routes>                   
           </div>
           <footer>
