@@ -19,7 +19,7 @@ export default class Chiefs extends Component {
                                     Oberschützenmeister:
                                 </span>                                
                             </dt>                            
-                            <dd>Rolf Wiggenhauser</dd>
+                            <dd>Daniel Gindele</dd>
 
                             <br></br>
                             <dt>
@@ -42,8 +42,7 @@ export default class Chiefs extends Component {
                                 <span className = "bold-text">
                                     Schießleiter:
                                 </span>
-                            </dt>
-                            <dd>Daniel Gindele</dd>
+                            </dt>                            
                             <dd>Patrick Tran</dd>
 
                             <br></br>
@@ -53,6 +52,7 @@ export default class Chiefs extends Component {
                                 </span>                                
                             </dt>
                             <dd>Florian Graeff</dd>
+                            <dd>Pius Wölfle</dd>
 
                             <br></br>
                             <dt>
@@ -69,9 +69,9 @@ export default class Chiefs extends Component {
                                 </span>
                             </dt>
                             <dd>Waltraud Diehl</dd>
-                            <dd>Sabrina Finsterle</dd>
-                            <dd>Daniel Herrmann</dd>
+                            <dd>Sabrina Finsterle</dd>                            
                             <dd>Thomas Schnetz</dd>
+                            <dd>Rolf Wiggenhauser</dd>
                         </dl>
                     </article>
                 </div>                
