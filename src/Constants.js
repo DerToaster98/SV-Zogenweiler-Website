@@ -134,12 +134,12 @@ export function getOSMAddress() {
             </dt>
             <dt>
                 <span>
-                    Rolf Wiggenhauser   
+                    Daniel Gindele
                 </span>
             </dt>
             <dt>
                 <span>
-                    Bettenweiler   
+                    Im Obstgarten 9 
                 </span>
             </dt>
             <dt>
@@ -150,7 +150,7 @@ export function getOSMAddress() {
             <dt><br></br></dt>                                    
             <dt>
                 <span>
-                    Tel.: 07504 - 1822   
+                    Tel.: 0160 - 97673757
                 </span>
             </dt>
             <dt>
