@@ -400,7 +400,7 @@ export default class Appointments extends Component {
             <div className="appointments">
                 <div className="page-content">
                     <header>
-                        <h1 className="text-color-green">Termine</h1>
+                        <h1 className="text-color-green">Unser Vereinskalender</h1>
                     </header>
                     <div className="appointment-calendar">
                         <div className="content-side-by-side-dynamic">

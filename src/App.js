@@ -13,6 +13,8 @@ import Privacy from './components/pages/legal/Privacy';
 import Statute from './components/pages/club/Statute';
 import Appointments from './components/pages/club/Appointments';
 import ResultsPDF from './components/pages/ResultsPDF';
+import RangeSupervision from './components/pages/club/RangeSupervision';
+import ClubHouse from './components/pages/club/ClubHouse';
 
 function App() {
   return (    
@@ -27,6 +29,8 @@ function App() {
               <Route path='verein/aktivitaeten' element={<Activities></Activities>}/>
               <Route path='verein/satzung' element={<Statute></Statute>}/>
               <Route path ='verein/termine' element={<Appointments></Appointments>}/>
+              <Route path ='verein/schiessdienste' element={<RangeSupervision></RangeSupervision>}/>
+              <Route path ='verein/schuetzenhaus' element={<ClubHouse></ClubHouse>}/>
               <Route path='impressum' element={<Imprint></Imprint>}/>
               <Route path='datenschutz' element={<Privacy></Privacy>}/>
               <Route path='ergebnisse' element={<ResultsPDF></ResultsPDF>}/>
