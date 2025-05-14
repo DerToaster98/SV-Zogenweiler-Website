@@ -16,7 +16,7 @@ export default class Imprint extends Component {
                         <p>
                             <strong>Vertreten durch:</strong>
                             <br />
-                            Rolf Wiggenhauser
+                            Daniel Gindele
                         </p>
 
                         <h2>Kontakt</h2>

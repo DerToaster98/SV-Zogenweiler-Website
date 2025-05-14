@@ -74,12 +74,12 @@ export function getResponsiblePersonAddress() {
         <dl>            
             <dt>
                 <span>
-                    Rolf Wiggenhauser   
+                    Daniel Gindele   
                 </span>
             </dt>
             <dt>
                 <span>
-                    Bettenweiler   
+                    Im Obstgarten 9
                 </span>
             </dt>
             <dt>
@@ -90,7 +90,7 @@ export function getResponsiblePersonAddress() {
             <dt><br></br></dt>                                    
             <dt>
                 <span>
-                    Tel.: 07504 - 1822   
+                    Tel.: 0160 - 97673757
                 </span>
             </dt>
             <dt>
@@ -107,12 +107,12 @@ export function getResponsiblePersonAddresNoContact() {
         <dl>            
             <dt>
                 <span>
-                    Rolf Wiggenhauser   
+                    Daniel Gindele   
                 </span>
             </dt>
             <dt>
                 <span>
-                    Bettenweiler   
+                    Im Obstgarten 9
                 </span>
             </dt>
             <dt>
