@@ -86,9 +86,22 @@ export default class Privacy extends Component {
                         <p>
                             Wir setzen folgende(n) Hoster ein:
                         </p>
-                        {/*TODO: Aktualisieren, aktuell ist das DOGADO!!!*/}
+                        {/*DONE: Aktualisieren, aktuell ist das DOGADO, GDrive und Github sowie Jotform*/}
                         <p>
-                            TO BE DECIDED
+                            <ul>
+                                <li>
+                                    <a href="https://github.com" rel="exxternal" target="_blank">GitHub</a> - Webseite selbst & PDF Dokumente
+                                </li>
+                                <li>
+                                    <a href="https://drive.google.com" rel="exxternal" target="_blank">Google Drive</a> - PDF und andere Dokumente
+                                </li>
+                                <li>
+                                    <a href="https://dogado.de" rel="exxternal" target="_blank">Dogado</a> - Webseite selbst
+                                </li>
+                                <li>
+                                    <a href="https://jotform.com" rel="exxternal" target="_blank">jotform</a> - Einträge der Helfereinsätze
+                                </li>
+                            </ul>
                         </p>
                         <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
                         <h3>Datenschutz</h3> 
