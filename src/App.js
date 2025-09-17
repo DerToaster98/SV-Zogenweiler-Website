@@ -27,7 +27,9 @@ function App() {
               <Route path='verein' element={<Club></Club>}/>
               <Route path='verein/vorstandschaft' element={<Chiefs></Chiefs>}/>
               <Route path='verein/aktivitaeten' element={<Activities></Activities>}/>
-              <Route path='verein/satzung' element={<Statute></Statute>}/>
+              {
+                //<Route path='verein/satzung' element={<Statute></Statute>}/>
+              }
               <Route path ='verein/termine' element={<Appointments></Appointments>}/>
               <Route path ='verein/schiessdienste' element={<RangeSupervision></RangeSupervision>}/>
               <Route path ='verein/schuetzenhaus' element={<ClubHouse></ClubHouse>}/>

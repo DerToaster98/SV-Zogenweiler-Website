@@ -39,9 +39,9 @@ export default class Header extends Component {
                                     <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/aktivitaeten">
                                         Aktivitäten
                                     </NavLink>
-                                    <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/satzung">
+                                    {/*<NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/satzung">
                                         Satzung
-                                    </NavLink>
+                                    </NavLink>*/}
                                 </nav>                               
                             </NavLink>
                             <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to="/ergebnisse">
@@ -77,9 +77,9 @@ export default class Header extends Component {
                                         <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/aktivitaeten">
                                             Aktivitäten
                                         </NavLink>
-                                        <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/satzung">
+                                        {/*<NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/satzung">
                                             Satzung
-                                        </NavLink>
+                                        </NavLink>*/}
                                     </nav>                                    
                                 </NavLink>
                                 <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to="/ergebnisse">
