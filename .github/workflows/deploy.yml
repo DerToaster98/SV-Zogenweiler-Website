@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./  # Wurzelverzeichnis des gh-pages Branches
-          server-dir: /sv-zogenweiler.de  # ggf. anpassen, z. B. /www oder leer lassen
+          server-dir: /sv-zogenweiler.de/  # ggf. anpassen, z. B. /www oder leer lassen
