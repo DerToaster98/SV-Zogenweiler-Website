@@ -5,7 +5,7 @@ export default class ResultsPDF extends Component {
     generateLink(ident, displayName) {
         // Link to file in public folder
         var url = '' + process.env.PUBLIC_URL + '/' + ident;
-        return <a href={url}>{displayName}</a>
+        return <a href={url} target="_blank">{displayName}</a>
     }
 
     render() {
