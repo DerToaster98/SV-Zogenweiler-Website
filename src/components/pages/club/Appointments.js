@@ -137,7 +137,7 @@ export default class Appointments extends Component {
         this.addAppointment("Kreiskönigsschießen in Berg", new Date(2025, 8, 23), new Date(2025, 8, 28), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Holzaktion", new Date(2025, 9, 4, 8, 30),  APPOINTMENT_TYPE.WHOLE_DAY);
         this.addAppointment("Königsschießen", new Date(2025, 9, 15, 19, 0), new Date(2025, 9, 15, 22, 0), APPOINTMENT_TYPE.TOURNAMENT);
-        this.addAppointment("Freundschaftsschießen gegen Wolpertswende", new Date(2025, 9, 17), APPOITNEMTNT_TYPE.UNSPECIFIED);
+        this.addAppointment("Freundschaftsschießen gegen Wolpertswende", new Date(2025, 9, 17), APPOINTMENT_TYPE.UNSPECIFIED);
         this.addAppointment("Königsschießen", new Date(2025, 9, 19, 10, 0), new Date(2025, 9, 19, 14, 0), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Siegerehrung Kreiskönigsschießen Berg", new Date(2025, 9, 24, 19, 30), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25), APPOINTMENT_TYPE.TOURNAMENT);
