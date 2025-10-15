@@ -33,6 +33,9 @@ export default class Header extends Component {
                                     <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/schiessdienste">
                                         Schießdienste
                                     </NavLink>
+                                    <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/einsaetze">
+                                        Arbeitseinsätze
+                                    </NavLink>
                                     <NavLink className="navbar-item" activeClassname="navbar-item active-normal" to ="/verein/schuetzenhaus">
                                         Schützenhaus
                                     </NavLink>
@@ -70,6 +73,9 @@ export default class Header extends Component {
                                         </NavLink>
                                         <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/schiessdienste">
                                             Schießdienste
+                                        </NavLink>
+                                        <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/einsaetze">
+                                            Arbeitseinsätze
                                         </NavLink>
                                         <NavLink className="navbar-item-mobile" activeClassname="navbar-item-mobile active-mobile" to ="/verein/schuetzenhaus">
                                             Schützenhaus

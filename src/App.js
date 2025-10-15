@@ -15,6 +15,7 @@ import Appointments from './components/pages/club/Appointments';
 import ResultsPDF from './components/pages/ResultsPDF';
 import RangeSupervision from './components/pages/club/RangeSupervision';
 import ClubHouse from './components/pages/club/ClubHouse';
+import Tasks from './components/pages/club/Tasks';
 
 function App() {
   return (    
@@ -33,9 +34,11 @@ function App() {
               <Route path ='verein/termine' element={<Appointments></Appointments>}/>
               <Route path ='verein/schiessdienste' element={<RangeSupervision></RangeSupervision>}/>
               <Route path ='verein/schuetzenhaus' element={<ClubHouse></ClubHouse>}/>
+              <Route path ='verein/einsaetze' element={<Tasks></Tasks>}/>
               <Route path='impressum' element={<Imprint></Imprint>}/>
               <Route path='datenschutz' element={<Privacy></Privacy>}/>
               <Route path='ergebnisse' element={<ResultsPDF></ResultsPDF>}/>
+              <Route path='arbeit' element={<Tasks></Tasks>}/>
             </Routes>                   
           </div>
           <footer>
