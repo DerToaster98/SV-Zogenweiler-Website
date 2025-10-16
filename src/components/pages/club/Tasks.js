@@ -82,10 +82,7 @@ export default class Tasks extends Component {
                         <br></br>
                         <br></br>
                         <span>
-                            Nicht geleistete Arbeitsstunden werden in Rechnung gestellt. Bei Rückfragen bitte an den Vorstand wenden!
-                        </span>
-                        <span>
-                            Die Stunden sind nachzuweisen über Einträge im Rapportzettel. Dieser ist weiter unten auf dieser Seite verlinkt.
+                            Nicht geleistete Arbeitsstunden werden in Rechnung gestellt. Bei Rückfragen bitte an den Vorstand wenden! Die Stunden sind nachzuweisen über Einträge im Rapportzettel. Dieser ist weiter unten auf dieser Seite verlinkt.
                         </span>
                         <h2 className="text-color-blue">Links</h2>
                         <ul>
