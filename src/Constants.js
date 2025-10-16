@@ -95,7 +95,7 @@ export function getResponsiblePersonAddress() {
             </dt>
             <dt>
                 <span>
-                    <a href="mailto:osm@svzogenweiler.de">osm@svzogenweiler.de   </a>
+                    <a href="mailto:osm@sv-zogenweiler.de">osm@sv-zogenweiler.de   </a>
                 </span>
             </dt>
         </dl>  
@@ -155,7 +155,7 @@ export function getOSMAddress() {
             </dt>
             <dt>
                 <span>
-                    <a href="mailto:osm@svzogenweiler.de">osm@svzogenweiler.de   </a>
+                    <a href="mailto:osm@sv-zogenweiler.de">osm@sv-zogenweiler.de   </a>
                 </span>
             </dt>
         </dl>  
