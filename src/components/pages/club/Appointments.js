@@ -28,7 +28,7 @@ class TimeBlock extends Component {
     }
     render() {
         var timeBlock = <span>Ganztägig</span>;
-        // TODO: Gegebenenfalls haben wir kein Enddatum
+        // TODO: ISt das Enddatum und das Startdatum gleich, dann wird die Uhrzeit nicht angezeigt => Fixen
         if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes() + this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
             if (this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
                 timeBlock = <span>{this.padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} - {this.padLeft(this.props.appointment.props.endDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.endDate.getMinutes(), 2, '0')} Uhr</span>;
