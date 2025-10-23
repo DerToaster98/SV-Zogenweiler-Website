@@ -152,7 +152,7 @@ export default class Appointments extends Component {
     }
 
     addAppointment(content, startDate, type) {
-        this.addAppointment(content, startDate, startDate, type);
+        this.addAppointment(content, startDate, new Date(startDate), type);
     }   
 
     addAppointment(content, startDate, endDate, type) {
