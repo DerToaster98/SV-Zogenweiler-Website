@@ -42,6 +42,7 @@ class TimeBlock extends Component {
 class DateDisplay extends Component {
     
     render() {
+        // TODO: Haben wir eine Start Uhrzeit aber kein Enddatum, dann wird die Urhzeit nicht angezeigt
         var startDate = new Date(this.props.startDate.getFullYear(), this.props.startDate.getMonth(), this.props.startDate.getDate(), 0, 0, 0);
         var endDate = new Date(this.props.endDate.getFullYear(), this.props.endDate.getMonth(), this.props.endDate.getDate(), 0, 0, 0);
         var isMultiDayDuration = startDate < endDate;
@@ -140,7 +141,7 @@ export default class Appointments extends Component {
         this.addAppointment("Freundschaftsschießen gegen Wolpertswende", new Date(2025, 9, 17), APPOINTMENT_TYPE.UNSPECIFIED);
         this.addAppointment("Königsschießen", new Date(2025, 9, 19, 10, 0), new Date(2025, 9, 19, 14, 0), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Siegerehrung Kreiskönigsschießen Berg", new Date(2025, 9, 24, 19, 30), APPOINTMENT_TYPE.TOURNAMENT);
-        this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25, 20, 00), new Date(2025, 9, 25, 24, 00), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Glassammlung", new Date(2025, 9, 25), APPOINTMENT_TYPE.WHOLE_DAY);
         this.addAppointment("Dämmerschoppen in Baindt", new Date(2025, 10, 14, 20, 0), APPOINTMENT_TYPE.UNSPECIFIED);
         this.addAppointment("Weihnachtsfeier", new Date(2025, 11, 21, 19, 0), APPOINTMENT_TYPE.UNSPECIFIED);
