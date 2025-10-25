@@ -28,9 +28,8 @@ class TimeBlock extends Component {
     }
     render() {
         var timeBlock = <span>Ganztägig</span>;
-        // TODO: ISt das Enddatum und das Startdatum gleich, dann wird die Uhrzeit nicht angezeigt => Fixen
-        if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes() + this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
-            if (this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
+        if ((this.props.appointment.props.startDate.getHours() + this.props.appointment.props.startDate.getMinutes()) > 0 || (this.props.appointment.props.endDate.getHours() + this.props.appointment.props.endDate.getMinutes()) > 0) {
+            if (this.props.appointment.props.endDate != null && this.props.appointment.props.startDate < this.props.appointment.props.endDate) {
                 timeBlock = <span>{this.padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} - {this.padLeft(this.props.appointment.props.endDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.endDate.getMinutes(), 2, '0')} Uhr</span>;
             } else {
                 timeBlock = <span>{this.padLeft(this.props.appointment.props.startDate.getHours(), 2, '0') + ':' + this.padLeft(this.props.appointment.props.startDate.getMinutes(), 2, '0')} Uhr </span>;
@@ -42,8 +41,7 @@ class TimeBlock extends Component {
 
 class DateDisplay extends Component {
     
-    render() {
-        // TODO: Haben wir eine Start Uhrzeit aber kein Enddatum, dann wird die Urhzeit nicht angezeigt
+    render() {        
         var startDate = new Date(this.props.startDate.getFullYear(), this.props.startDate.getMonth(), this.props.startDate.getDate(), 0, 0, 0);
         var endDate = new Date(this.props.endDate.getFullYear(), this.props.endDate.getMonth(), this.props.endDate.getDate(), 0, 0, 0);
         var isMultiDayDuration = startDate < endDate;
@@ -142,7 +140,7 @@ export default class Appointments extends Component {
         this.addAppointment("Freundschaftsschießen gegen Wolpertswende", new Date(2025, 9, 17), APPOINTMENT_TYPE.UNSPECIFIED);
         this.addAppointment("Königsschießen", new Date(2025, 9, 19, 10, 0), new Date(2025, 9, 19, 14, 0), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Siegerehrung Kreiskönigsschießen Berg", new Date(2025, 9, 24, 19, 30), APPOINTMENT_TYPE.TOURNAMENT);
-        this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25, 20, 00), new Date(2025, 9, 25, 24, 00), APPOINTMENT_TYPE.TOURNAMENT);
+        this.addAppointment("Siegerehrung Königsschießen", new Date(2025, 9, 25, 20, 0), APPOINTMENT_TYPE.TOURNAMENT);
         this.addAppointment("Glassammlung", new Date(2025, 9, 25), APPOINTMENT_TYPE.WHOLE_DAY);
         this.addAppointment("Dämmerschoppen in Baindt", new Date(2025, 10, 14, 20, 0), APPOINTMENT_TYPE.UNSPECIFIED);
         this.addAppointment("Weihnachtsfeier", new Date(2025, 11, 21, 19, 0), APPOINTMENT_TYPE.UNSPECIFIED);
