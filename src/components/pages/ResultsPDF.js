@@ -18,6 +18,9 @@ export default class ResultsPDF extends Component {
                             <li>
                                 {this.generateLink('pdf/Gemeindemeisterschaft_Ergebnisse_2025.pdf', 'Gemeindemeisterschaft 2025')}
                             </li>
+                            <li>
+                                {this.generateLink('pdf/Koenigsschiessen_Ergebnisse_2025.pdf', 'Königsschießen 2025')}
+                            </li>
                         </ul>
                     </article>
                 </div>
